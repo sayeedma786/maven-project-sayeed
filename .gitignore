@@ -9,6 +9,7 @@
 *.ear
 *.log
 
+
 # ------------------------------------------------------------------------------------------- #
 # Eclipse-specific (https://github.com/github/gitignore/blob/master/Global/Eclipse.gitignore) #
 # ------------------------------------------------------------------------------------------- #
@@ -47,3 +48,4 @@ local.properties
 flows/
 target/
 src/main/api/.repository/ 
+activemq-data/
