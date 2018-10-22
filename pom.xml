@@ -7,11 +7,9 @@
     <version>1.0.0-SNAPSHOT</version>
     <packaging>mule</packaging>
 	<name>Mule maven-project-sayeed Application</name>
-
     <properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
 		<mule.version>3.9.1</mule.version>
     	<mule.tools.version>1.7</mule.tools.version>
 	</properties>
@@ -136,7 +134,19 @@
             <version>${mule.version}</version>
             <scope>provided</scope>
         </dependency>
+    <dependency>
+            <groupId>org.mule.modules</groupId>
+            <artifactId>mule-module-db</artifactId>
+            <version>${mule.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+		 <groupId>org.apache.derby</groupId>
+		 <artifactId>derby</artifactId>
+			<version>10.12.1.1</version>
+		</dependency>
     </dependencies>
+    
 
 	<repositories>
           <repository>
