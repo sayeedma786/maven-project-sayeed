@@ -10,28 +10,29 @@ import org.mule.tck.junit4.rule.DynamicPort;
 
 public class HelloMavenTest extends FunctionalTestCase {
 
-	@Rule 
+	@Rule
 	public DynamicPort myPort = new DynamicPort("http.port");
-	
-	
-    @Test
-    public void mavenFlowReturnsHelloMaven() throws Exception {
-    	System.out.println("\n\nTestcase#1-----------------------------------> http port:"  +myPort.getNumber() + "\n\n");
-        runFlowAndExpect("mavenFlow", "Hello Maven");
-    }
-    
-    @Test
-    public void retrieveFlightsAddsAppropriateHeader() throws Exception {
-    	System.out.println("\n\nTestcase#2-----------------------------------> http port:"  +myPort.getNumber() + "\n\n");
-      MuleEvent event = runFlow("retrieveFlights");
-      String contentType = event.getMessage().getOutboundProperty("Content-Type");
-      assertEquals("application/json", contentType);
-    }
-    
-    @Override
-    protected String[] getConfigFiles() {
-        String[] files = {"maven-project-sayeed.xml","common-resources.xml"};
-        return files;
-    }
+
+	@Test
+	public void mavenFlowReturnsHelloMaven() throws Exception {
+		System.out
+				.println("\n\nTestcase#1-----------------------------------> http port:" + myPort.getNumber() + "\n\n");
+		runFlowAndExpect("mavenFlow", "Hello Maven");
+	}
+
+	@Test
+	public void retrieveFlightsAddsAppropriateHeader() throws Exception {
+		System.out
+				.println("\n\nTestcase#2-----------------------------------> http port:" + myPort.getNumber() + "\n\n");
+		MuleEvent event = runFlow("retrieveFlights");
+		String contentType = event.getMessage().getOutboundProperty("Content-Type");
+		assertEquals("application/json", contentType);
+	}
+
+	@Override
+	protected String[] getConfigFiles() {
+		String[] files = { "maven-project-sayeed.xml", "common-resources.xml" };
+		return files;
+	}
 
 }
